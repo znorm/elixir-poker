@@ -13,15 +13,16 @@ defmodule Pokerwars.Card do
             n when n in ["K", 13] -> 13
             n when n in ["Q", 12] -> 12
             n when n in ["J", 11] -> 11
-            _ -> rank_char
+            _ -> Integer.parse(rank_char)
         end
 
-        %Card{rank: rank, suit: String.slice(cardString, 1..-1)}
+        %Pokerwars.Card{rank: rank, suit: String.slice(cardString, 1..-1)}
 
     end
 
     def print(card) do
-
+        "#{card.rank}#{card.suit}"
     end
+
 
 end
